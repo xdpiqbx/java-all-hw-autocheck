@@ -18,7 +18,11 @@ public class ExonNames {
         String code = name.charAt(0) + String.valueOf(name.charAt(name.length() - 1));
         return code.toUpperCase();
     }
-
+    /*
+    public String getNameCode(String name){
+        return (name.substring(0, 1) + name.substring(name.length()-1, name.length())).toUpperCase();
+    }
+    */
     public boolean isMoneyName(String name) {
         char firstLetter = name.charAt(0);
         char lastLetter = name.charAt(name.length() - 1);
@@ -33,6 +37,13 @@ public class ExonNames {
         return name.strip().isEmpty();
     }
 
+    /*
+    public boolean isInvisibleName(String name){
+        name = name.trim();
+        return name.length() == 0;
+    }
+    */
+
     public String makeNamePositive(String name) {
         return name
                 .replace("no", "yes")
@@ -40,6 +51,17 @@ public class ExonNames {
                 .replace("nO", "yes")
                 .replace("NO", "yes");
     }
+
+    /*
+    public String makeNamePositive(String name){
+        if(!name.toLowerCase().contains("no")){
+            return name;
+        }
+        name = name.toLowerCase();
+        name = name.replace("no", "yes");
+        return name.charAt(0) + name.substring(1, name.length()).toLowerCase();
+    }
+     */
 
     public String makeNameClean(String name) {
         return "CLEAN" + name.strip() + "CLEAN";
