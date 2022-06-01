@@ -1,4 +1,4 @@
-package module_002.Task_037;
+package module_002.Task_037_045;
 
 public class ExonNames {
     public boolean areNamesEqual(String name1, String name2) {
