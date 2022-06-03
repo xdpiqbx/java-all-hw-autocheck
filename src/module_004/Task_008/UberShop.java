@@ -1,4 +1,4 @@
-package module_004.Task_006;
+package module_004.Task_008;
 
 import java.util.*;
 
@@ -90,30 +90,58 @@ public class UberShop {
         return result;
     }
 
-    public int[] leavePrice9(int[] prices){
-        int toRemoveCount = 0;
+    public int[] leavePrice9(int[] prices) {
+        int validPriceCount = 0;
         for(int price: prices) {
-            if (price % 10 != 9) {
-                toRemoveCount++;
+            if (price%10 == 9) {
+                validPriceCount++;
             }
         }
-        int[] arrAll9 = new int[prices.length - toRemoveCount];
+
+        int[] result = new int[validPriceCount];
         int index = 0;
         for(int price: prices) {
-            if (price % 10 == 9) {
-                arrAll9[index] = price;
+            if (price%10 == 9) {
+                result[index] = price;
                 index++;
             }
         }
-        return arrAll9;
+
+        return result;
+    }
+
+    public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks) {
+        String[] result = new String[showcaseStocks.length + warehouseStocks.length];
+
+        int index = 0;
+        for(String stock: showcaseStocks) {
+            result[index] = stock;
+            index++;
+        }
+
+        for(String stock: warehouseStocks) {
+            result[index] = stock;
+            index++;
+        }
+
+        return result;
+    }
+
+    public int getPricesSum(int[] prices, int minPrice, int maxPrice){
+        int total = 0;
+        for (int price: prices) {
+            if(price >= minPrice && maxPrice >= price ){
+                total += price;
+            }
+        }
+        return total;
     }
 
     //Test output
     public static void main(String[] args) {
         UberShop shop = new UberShop();
-
-        //Should be [1599, 399]
-        int[] prices = new int[] {39, 26, 29, 40, 59, 31, 69, 61, 89, 69};
-        System.out.println(Arrays.toString(shop.leavePrice9(prices)));
+        //Should be 144 - 20 + 50 + 40 + 34
+        int[] prices = new int[] {66, 29, 93, 76, 32, 3, 7, 45, 16, 85, 97};
+        System.out.println(shop.getPricesSum(prices, 11, 45));
     }
 }

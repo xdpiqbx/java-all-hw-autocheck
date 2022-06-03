@@ -1,4 +1,4 @@
-package module_004.Task_006;
+package module_004.Task_007;
 
 import java.util.*;
 
@@ -90,30 +90,47 @@ public class UberShop {
         return result;
     }
 
-    public int[] leavePrice9(int[] prices){
-        int toRemoveCount = 0;
+    public int[] leavePrice9(int[] prices) {
+        int validPriceCount = 0;
         for(int price: prices) {
-            if (price % 10 != 9) {
-                toRemoveCount++;
+            if (price%10 == 9) {
+                validPriceCount++;
             }
         }
-        int[] arrAll9 = new int[prices.length - toRemoveCount];
+
+        int[] result = new int[validPriceCount];
         int index = 0;
         for(int price: prices) {
-            if (price % 10 == 9) {
-                arrAll9[index] = price;
+            if (price%10 == 9) {
+                result[index] = price;
                 index++;
             }
         }
-        return arrAll9;
+
+        return result;
+    }
+
+    public String[] mergeStocks(String[] showcaseStocks, String[] warehouseStocks){
+        String [] concatenatedArray = new String[showcaseStocks.length + warehouseStocks.length];
+        int index = 0;
+        for (String element: showcaseStocks) {
+            concatenatedArray[index] = element;
+            index++;
+        }
+        for (String element: warehouseStocks) {
+            concatenatedArray[index] = element;
+            index++;
+        }
+        return concatenatedArray;
     }
 
     //Test output
     public static void main(String[] args) {
         UberShop shop = new UberShop();
 
-        //Should be [1599, 399]
-        int[] prices = new int[] {39, 26, 29, 40, 59, 31, 69, 61, 89, 69};
-        System.out.println(Arrays.toString(shop.leavePrice9(prices)));
+        //Final result should be ["gun", "firebow", "firegun"]
+        String[] showcaseStocks = new String[] {"gun", "firebow"};
+        String[] warehouseStocks = new String[] {"firegun"};
+        System.out.println(Arrays.toString(shop.mergeStocks(showcaseStocks, warehouseStocks)));
     }
 }
