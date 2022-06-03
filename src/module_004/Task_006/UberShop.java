@@ -105,9 +105,15 @@ public class UberShop {
                 index++;
             }
         }
-        int temp = 0;
-        for (int price: arrAll9){
-            temp = price;
+        int dublicateCount = 0;
+        for (int i = 0; i < arrAll9.length; i++) {
+            int current = arrAll9[i];
+            for (int j = 0; j < arrAll9.length; j++){
+                if (current == arrAll9[j]){
+                    continue;
+                }
+            }
+            System.out.println(current);
         }
         return arrAll9;
     }
