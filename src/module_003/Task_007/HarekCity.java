@@ -13,8 +13,21 @@ public class HarekCity {
     }
 
     public void fixNames(String[] names, String[] toReplace){
-        // IN PROCESS
+        int namesLen = names.length;
+        int replaceIndex = 0;
+        for (int i = 0; i < namesLen; i++) {
+            if (i % 2 != 0){
+                names[i] = toReplace[replaceIndex];
+                replaceIndex++;
+            }
+        }
     }
+    /*
+    public void fixNames(String[] names, String[] toReplace) {
+        names[1] = toReplace[0];
+        names[3] = toReplace[1];
+    }
+    */
 
     public static void main(String[] args) {
         String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
