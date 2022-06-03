@@ -54,10 +54,17 @@ public class UberShop {
             return 0;
         }
         int minCount = 0;
-        float minPrice = 0;
-//        for (int i = 0; i < arrLen; i++) {
-//            minPrice = prices[i];
-//        }
+        float minPrice = prices[0];
+        for (int i = 0; i < arrLen; i++) {
+            if(minPrice > prices[i]){
+                minPrice = prices[i];
+            }
+        }
+        for (int i = 0; i < arrLen; i++) {
+            if(minPrice == prices[i]){
+                minCount++;
+            }
+        }
         return minCount;
     }
 
