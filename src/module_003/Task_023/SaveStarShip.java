@@ -108,6 +108,19 @@ public class SaveStarShip {
     }
 
     public boolean isHangarOk(int side1, int side2, int price){
+        if (side1 * side2 < 1500){
+            return false;
+        }
+
+        float div1 = (float)side1 / (float)side2;
+        float div2 = (float)side2 / (float)side1;
+        if(div1 > 2.0 || div2 > 2.0){
+            return false;
+        }
+
+        if(price / (side1 * side2) > 1000){
+            return false;
+        }
         return true;
     }
 
@@ -135,12 +148,12 @@ public class SaveStarShip {
 
         //Test stdin data - 1 3 5.
         //Console ouput should be 3.5
-        ship.calculateMaxPower();
+//        ship.calculateMaxPower();
 
         //Should be "crystall coin"
         System.out.println(ship.getMyPrizes(250));
 
         //Should be true
-        System.out.println(ship.isHangarOk(100, 75, 1000000));
+        System.out.println(ship.isHangarOk(63, 126, 1566873 ));
     }
 }
