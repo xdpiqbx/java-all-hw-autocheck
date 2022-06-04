@@ -12,7 +12,15 @@ public class TrurlBank {
         return result;
     }
     public int countSumOfDigits(int number){
-        return number / 10;//*************************************************
+        String numStr = Integer.toString(number);
+        int i = 0;
+        int len = numStr.length();
+        int total = 0;
+        while(i < len){
+            total += Integer.parseInt(String.valueOf(numStr.charAt(i)));
+            i++;
+        }
+        return total;
     }
     public static void main(String[] args) {
         TrurlBank bank = new TrurlBank();
