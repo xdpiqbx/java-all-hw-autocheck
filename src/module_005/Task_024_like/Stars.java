@@ -1,4 +1,4 @@
-package module_005.Task_024_nice;
+package module_005.Task_024_like;
 
 public class Stars {
     private int count;
@@ -14,20 +14,21 @@ public class Stars {
     @Override
     public String toString() {
         String intergalacticGuildCount = "";
+
         int [] arabicCount = new int []{1000, 100, 10, 1};
         String [] guildCount = new String[]{"X", "Y", "Z", "*"};
+
         int arrLen = arabicCount.length;
         int tempCount = this.count;
-        int i = 0;
 
-        while (i < arrLen){
+        for (int i = 0; i < arrLen; i++){
             int res = tempCount/arabicCount[i];
             for (int j = 0; j < res; j++) {
                 intergalacticGuildCount += guildCount[i];
             }
             tempCount %= arabicCount[i];
-            i++;
         }
+
         return intergalacticGuildCount;
     }
 
