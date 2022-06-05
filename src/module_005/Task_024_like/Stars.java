@@ -16,7 +16,7 @@ public class Stars {
         String intergalacticGuildCount = "";
 
         int [] arabicCount = new int []{1000, 100, 10, 1};
-        String [] guildCount = new String[]{"X", "Y", "Z", "*"};
+        char [] guildCount = new char[]{'X', 'Y', 'Z', '*'};
 
         int arrLen = arabicCount.length;
         int tempCount = this.count;
