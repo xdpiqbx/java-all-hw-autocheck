@@ -22,6 +22,7 @@ class Distance{
         this.endY = endY;
     }
     public int getDistance(){
-//        return (int) Math.pow((double)startX - (double)endX);
+        double intermediateResult = Math.pow(this.endX - this.startX, 2) + Math.pow(this.endY - this.startY, 2);
+        return (int)Math.round(Math.sqrt(intermediateResult));
     }
 }
