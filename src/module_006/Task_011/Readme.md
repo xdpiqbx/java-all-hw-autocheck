@@ -1,0 +1,1 @@
+![](https://cdn.lifehacker.ru/wp-content/uploads/2020/03/2_1583504272-630x315.jpg)
