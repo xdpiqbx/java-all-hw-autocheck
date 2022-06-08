@@ -4,11 +4,13 @@ import java.util.Arrays;
 
 class TargetFinderTest {
     public static void main(String[] args) {
-        int[] aiCoords = {10, 10};
+        int[] aiCoords = {2, 3};
         int[][] targets = {
-                {20, 20},
-                {15, 14},
-                {30, 5}
+                {28, 3},
+                {35, 3},
+                {43, 3},
+                {8, 3},
+                {12, 3}
         };
 
         TargetFinder targetFinder = new TargetFinder();
@@ -27,8 +29,9 @@ class TargetFinder{
         double minDistance = this.getDistance(aiCoords[0], aiCoords[1], targets[0][0], targets[0][1]);
         for (int[] target: targets) {
             double temp = this.getDistance(aiCoords[0], aiCoords[1], target[0], target[1]);
-            if(minDistance > temp){
+            if(temp < minDistance){
                 distances = target;
+                minDistance = temp;
             }
             i++;
         }
