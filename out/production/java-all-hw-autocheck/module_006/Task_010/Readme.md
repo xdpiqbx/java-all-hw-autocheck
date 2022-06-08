@@ -1,0 +1,1 @@
+![](https://zaochnik.com/uploads/2018/01/08/image030.png)
