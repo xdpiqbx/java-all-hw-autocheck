@@ -28,21 +28,29 @@ class QuarkeTrackTest {
 
 class QuarkeTrack{
     int [] lines;
+    int trackSum;
     public QuarkeTrack(int[] lines){
         this.lines = Arrays.copyOf(lines, lines.length);
+        this.trackSum = this.sumOfTrack(this.lines);
     }
 
-    private boolean isEqualTrack(int []track){
-        return true;
+    private int sumOfTrack(int []track){
+        int res = 0;
+        for (int steps: track) {
+            res += steps;
+        }
+        return res;
     }
 
     @Override
     public boolean equals(Object o) {
-        return isEqualTrack(this.lines);
+        if (o == null || getClass() != o.getClass()) return false;
+        QuarkeTrack that = (QuarkeTrack) o;
+        return this.trackSum == that.trackSum;
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(lines);
+        return this.trackSum;
     }
 }
