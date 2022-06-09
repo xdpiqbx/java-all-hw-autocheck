@@ -23,9 +23,7 @@ class TargetFinderTest {
 
 class TargetFinder{
     public int[] findTarget(int[] aiCoords, int[][] targets){
-        int targetsCount = targets.length;
         int [] distances = new int[1];
-        int i = 0;
         double minDistance = this.getDistance(aiCoords[0], aiCoords[1], targets[0][0], targets[0][1]);
         for (int[] target: targets) {
             double temp = this.getDistance(aiCoords[0], aiCoords[1], target[0], target[1]);
@@ -33,7 +31,6 @@ class TargetFinder{
                 distances = target;
                 minDistance = temp;
             }
-            i++;
         }
         return distances;
     }
