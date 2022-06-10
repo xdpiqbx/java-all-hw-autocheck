@@ -20,7 +20,6 @@ class WordFreqCounter{
                 count++;
             }
         }
-        float res = (float)count > 0f ? (float)count / (float)wordCount : 0f;
-        return res;
+        return (float)count / (float)wordCount;
     }
 }
