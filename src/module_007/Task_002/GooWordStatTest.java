@@ -36,6 +36,14 @@ class GooWordStat{
 
     @Override
     public String toString() {
-        return "Word is ["+this.word+"], search freq is "+this.freq;
+        if (this.freq < 1000){
+            return "Word is ["+this.word+"], search freq is LOW";
+        } else if (this.freq >= 1000000) {
+            return "Word is ["+this.word+"], search freq is EXTRA HIGH";
+        } else if (this.freq >= 100000) {
+            return "Word is ["+this.word+"], search freq is HIGH";
+        } else {
+            return "Word is ["+this.word+"], search freq is MEDIUM";
+        }
     }
 }
